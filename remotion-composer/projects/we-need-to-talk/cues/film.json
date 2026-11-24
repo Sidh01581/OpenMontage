@@ -1,0 +1,314 @@
+{
+ "duration_s": 42.0,
+ "vo": [
+  {
+   "id": "P01",
+   "at": 0.25,
+   "cap_y": 1450
+  },
+  {
+   "id": "W01",
+   "at": 4.35,
+   "cap_y": 1010
+  },
+  {
+   "id": "T01",
+   "at": 6.05,
+   "cap_y": 1450
+  },
+  {
+   "id": "W02",
+   "at": 8.75,
+   "cap_y": 1450
+  },
+  {
+   "id": "W03",
+   "at": 10.4,
+   "cap_y": 1450
+  },
+  {
+   "id": "W04",
+   "at": 12.9,
+   "cap_y": 1480
+  },
+  {
+   "id": "T02",
+   "at": 14.85,
+   "cap_y": 1450
+  },
+  {
+   "id": "W05",
+   "at": 17.4,
+   "cap_y": 1450
+  },
+  {
+   "id": "W05",
+   "at": 17.8,
+   "gain": 0.6,
+   "no_caption": true
+  },
+  {
+   "id": "W05",
+   "at": 18.25,
+   "gain": 0.5,
+   "no_caption": true
+  },
+  {
+   "id": "W05",
+   "at": 20.8,
+   "gain": 0.55,
+   "no_caption": true
+  },
+  {
+   "id": "W05",
+   "at": 21.2,
+   "gain": 0.65,
+   "no_caption": true
+  },
+  {
+   "id": "W05",
+   "at": 21.6,
+   "gain": 0.5,
+   "no_caption": true
+  },
+  {
+   "id": "T03",
+   "at": 22.95,
+   "cap_y": 1240
+  },
+  {
+   "id": "P02",
+   "at": 28.2,
+   "cap_y": 1450
+  },
+  {
+   "id": "P03",
+   "at": 30.4,
+   "cap_y": 1450
+  },
+  {
+   "id": "P04",
+   "at": 31.05,
+   "cap_y": 1450
+  },
+  {
+   "id": "T04",
+   "at": 34.0,
+   "cap_y": 1450
+  },
+  {
+   "id": "N01",
+   "at": 35.6,
+   "cap_y": 1450
+  },
+  {
+   "id": "W06",
+   "at": 39.6,
+   "cap_y": 1450
+  }
+ ],
+ "sfx": [
+  {
+   "name": "office_hum_8s",
+   "at": 0.0,
+   "gain": 0.45,
+   "dur": 3.0,
+   "fade": 0.04
+  },
+  {
+   "name": "keyboard_calm_4s",
+   "at": 0.0,
+   "gain": 0.35,
+   "dur": 2.4,
+   "fade": 0.3
+  },
+  {
+   "name": "orchestra_sting",
+   "at": 3.0,
+   "gain": 1.0
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 4.0,
+   "gain": 0.12,
+   "dur": 4.5
+  },
+  {
+   "name": "bloop",
+   "at": 4.05,
+   "gain": 0.8
+  },
+  {
+   "name": "buzz_20s",
+   "at": 4.1,
+   "gain": 0.1,
+   "ramp_to": 0.3,
+   "dur": 4.4
+  },
+  {
+   "name": "desk_rattle_2s",
+   "at": 6.1,
+   "gain": 0.5
+  },
+  {
+   "name": "buzz_20s",
+   "at": 8.5,
+   "gain": 0.3,
+   "ramp_to": 0.42,
+   "dur": 8.75,
+   "fade": 0.1
+  },
+  {
+   "name": "rain_12s",
+   "at": 8.5,
+   "gain": 0.5,
+   "dur": 1.75,
+   "fade": 0.05
+  },
+  {
+   "name": "crowd_murmur_4s",
+   "at": 10.25,
+   "gain": 0.45,
+   "dur": 2.5,
+   "fade": 0.05
+  },
+  {
+   "name": "plod_2s",
+   "at": 12.75,
+   "gain": 0.5,
+   "dur": 2.0
+  },
+  {
+   "name": "train_pass",
+   "at": 14.75,
+   "gain": 0.38,
+   "dur": 2.5,
+   "fade": 0.1
+  },
+  {
+   "name": "slurp",
+   "at": 15.85,
+   "gain": 0.55,
+   "dur": 0.55
+  },
+  {
+   "name": "heartbeat_6s",
+   "at": 17.25,
+   "gain": 0.8,
+   "dur": 5.5,
+   "fade": 0.2
+  },
+  {
+   "name": "buzz_20s",
+   "at": 17.25,
+   "gain": 0.12,
+   "ramp_to": 0.25,
+   "dur": 3.5
+  },
+  {
+   "name": "flap_click",
+   "at": 19.25,
+   "gain": 0.85
+  },
+  {
+   "name": "flap_click",
+   "at": 19.75,
+   "gain": 0.85
+  },
+  {
+   "name": "flap_click",
+   "at": 20.25,
+   "gain": 0.85
+  },
+  {
+   "name": "buzz_20s",
+   "at": 20.75,
+   "gain": 0.35,
+   "ramp_to": 0.9,
+   "dur": 2.0,
+   "fade": 0.04
+  },
+  {
+   "name": "tube_hum_3s",
+   "at": 22.75,
+   "gain": 0.45,
+   "dur": 2.5,
+   "fade": 0.05
+  },
+  {
+   "name": "buzz_20s",
+   "at": 22.75,
+   "gain": 0.12,
+   "dur": 2.5
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 25.25,
+   "gain": 0.15,
+   "dur": 4.35,
+   "fade": 0.1
+  },
+  {
+   "name": "shuffle_steps",
+   "at": 25.25,
+   "gain": 0.75,
+   "dur": 2.5
+  },
+  {
+   "name": "slurp",
+   "at": 26.6,
+   "gain": 0.55
+  },
+  {
+   "name": "buzz_20s",
+   "at": 25.25,
+   "gain": 0.25,
+   "ramp_to": 0.18,
+   "dur": 4.35,
+   "fade": 0.1
+  },
+  {
+   "name": "clock_tick_loud",
+   "at": 29.6,
+   "gain": 0.95
+  },
+  {
+   "name": "party_popper",
+   "at": 31.05,
+   "gain": 1.0
+  },
+  {
+   "name": "balloon_pop_squeal",
+   "at": 32.0,
+   "gain": 0.95
+  },
+  {
+   "name": "applause_6s",
+   "at": 32.3,
+   "gain": 0.55,
+   "fade": 1.0
+  },
+  {
+   "name": "buzz_20s",
+   "at": 39.3,
+   "gain": 0.1,
+   "dur": 2.1,
+   "fade": 0.1
+  },
+  {
+   "name": "ding",
+   "at": 41.4,
+   "gain": 0.85
+  }
+ ],
+ "silence": [
+  [
+   29.75,
+   30.35
+  ],
+  [
+   41.75,
+   42.0
+  ]
+ ]
+}

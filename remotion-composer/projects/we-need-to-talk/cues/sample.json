@@ -1,0 +1,17 @@
+{
+  "duration_s": 8.5,
+  "vo": [
+    {"id": "P01", "at": 0.25, "cap_y": 1450},
+    {"id": "W01", "at": 4.35, "cap_y": 1010},
+    {"id": "T01", "at": 6.05, "cap_y": 1450}
+  ],
+  "sfx": [
+    {"name": "office_hum_8s", "at": 0.0, "gain": 0.45, "dur": 3.0, "fade": 0.04},
+    {"name": "keyboard_calm_4s", "at": 0.0, "gain": 0.35, "dur": 2.4, "fade": 0.3},
+    {"name": "orchestra_sting", "at": 3.0, "gain": 1.0},
+    {"name": "office_hum_8s", "at": 4.0, "gain": 0.12, "dur": 4.5},
+    {"name": "bloop", "at": 4.05, "gain": 0.8},
+    {"name": "buzz_6s", "at": 4.1, "gain": 0.10, "ramp_to": 0.30, "dur": 4.4},
+    {"name": "desk_rattle_2s", "at": 6.1, "gain": 0.5}
+  ]
+}
