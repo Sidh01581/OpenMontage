@@ -23,12 +23,12 @@ const groupEnd = (groups: CapGroup[], i: number) => {
   return Math.min(next, last + 0.45);
 };
 
-export const WordCaptions: React.FC<{ t: number; groups: CapGroup[]; hideAfter?: number }> = ({ t, groups, hideAfter = Infinity }) => {
+export const WordCaptions: React.FC<{ t: number; groups: CapGroup[]; hideAfter?: number; colors?: Record<string, string> }> = ({ t, groups, hideAfter = Infinity, colors = SPEAKER_COLOR }) => {
   if (t >= hideAfter) return null;
   const gi = groups.findIndex((g, i) => t >= g.words[0].s && t < groupEnd(groups, i));
   if (gi < 0) return null;
   const g = groups[gi];
-  const color = SPEAKER_COLOR[g.speaker] ?? "#FFFFFF";
+  const color = colors[g.speaker] ?? "#FFFFFF";
   const chars = g.words.reduce((n, w) => n + w.w.length, 0) + g.words.length - 1;
   const size = chars > 16 ? 82 : chars > 11 ? 96 : 112;
   return (
@@ -58,7 +58,7 @@ export const WordCaptions: React.FC<{ t: number; groups: CapGroup[]; hideAfter?:
 };
 
 // "POV: your boss says ..." hook card, visible from frame 0 (no fade-in: the first frame must read).
-export const HookCaption: React.FC<{ t: number; until: number }> = ({ t, until }) => {
+export const HookCaption: React.FC<{ t: number; until: number; children?: React.ReactNode }> = ({ t, until, children }) => {
   if (t >= until) return null;
   const out = Math.max(0, (t - (until - 0.12)) / 0.12);
   return (
@@ -69,7 +69,7 @@ export const HookCaption: React.FC<{ t: number; until: number }> = ({ t, until }
         fontFamily, fontWeight: 700, fontSize: 52, lineHeight: 1.12, color: "#111018", textAlign: "center",
         letterSpacing: "-0.02em", opacity: 1 - out, transform: `rotate(-1.5deg) scale(${1 - out * 0.1})`,
       }}>
-        POV: your boss says<br />“we need to talk tomorrow”
+        {children ?? <>POV: your boss says<br />“we need to talk tomorrow”</>}
       </div>
     </AbsoluteFill>
   );
