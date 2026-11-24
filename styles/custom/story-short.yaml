@@ -1,0 +1,107 @@
+identity:
+  name: Story Short
+  category: cinematic
+  mood: emotional, intimate, cinematic, hopeful ending
+  pace: moderate
+  best_for: '3-4 minute animated short films about a habit or struggle (procrastination, comfort, phone addiction,
+    heartbreak). One character, one villain, one story. Reference film: LATER. (projects/later, remotion-composer/projects/later)'
+visual_language:
+  color_palette:
+    primary:
+    - '#E8B23A'
+    - '#5E7FB8'
+    accent:
+    - '#E0408A'
+    - '#FFC870'
+    background: '#E9CFA8'
+    text: '#FFFFFF'
+    muted: '#8A7A66'
+  composition: Real lived-in sets in every shot (never bare gradients); hero off-center; villain enters from edges
+    and shadows
+  texture: bold even black outlines (~6 px), flat cel colors, soft radial light pools, vignette in dark acts
+typography:
+  headings:
+    font: Space Grotesk
+    weight: 700
+    tracking: -0.02em
+  body:
+    font: Space Grotesk
+    weight: 400
+    line_height: 1.4
+motion:
+  transitions:
+  - cut
+  animation_style: 'Every shot has a slow camera move (push-in, pull-back, drift) plus secondary motion: blinks,
+    breathing, hair bounce, dust, rain, steam. Hard cuts (no transition effects); cut every 2-4 s; leave room for
+    silence.'
+  pacing_rules:
+    min_scene_hold_seconds: 1.5
+    max_scene_hold_seconds: 5
+    transition_duration_seconds: 0.1
+audio:
+  voice_style: Calm, low narrator telling a story at night; hero voice whispered/anxious then steady; villain soft
+    and sweet turning smug
+  tts_default: piper (local, free); ElevenLabs if configured and approved
+  music_mood: quiet intro -> build -> silence at rock bottom -> hopeful build -> soft resolve
+  music_source: music_library/ (YouTube Audio Library tracks); hard silence at rock bottom
+  music_volume: 0.18
+  sfx_style: 'diegetic and specific: clock ticks, typing, rain, phone taps, villain smoke whoosh, a shimmer when
+    the villain grows or shrinks'
+  ducking_threshold_db: -10
+asset_generation:
+  consistency_anchors:
+  - Same hero rig and proportions in every shot
+  - Villain size follows the act plan
+  - Lighting matches the color script
+  - No stock scene types
+  image_prompt_prefix: '2D cartoon illustration, bold clean black outlines, flat cel shading, expressive faces,
+    lived-in room backgrounds, cinematic warm/cool lighting, '
+  image_negative_prompt: photorealistic, 3D render, anime, watercolor, text, captions, logos, watermark
+  image_variation_guidance: atelier vector (Remotion SVG), no AI images or video required. The image prompt fields
+    apply only if an AI-image variant is approved.
+  default_vignette: true
+quality_rules:
+- Personify the bad habit as a villain whose SIZE is the scoreboard
+- Teach every lesson by showing it in the story; no title cards, numbered lists, bullet text, or like/subscribe
+  graphics
+- 'Only on-screen text: the title at ~0:13 and the closing line'
+- A recurring pet reacts to the hero's choices (sleeps when he slacks, sits with him when he works)
+- Emotional lines are always close-ups
+- Every shot has camera motion and secondary motion; nothing sits still more than ~1 s
+- Hero looks identical in every shot (same rig)
+- Villain size matches the act plan
+- True silence at rock bottom
+- Thumbnail reads at phone size with one word
+format:
+  title_pattern: ONE WORD. | An Animated Short Film About <topic>
+  runtime_seconds:
+  - 190
+  - 220
+  shots: ~50, avg 3.5-4 s
+  story_shape:
+  - 'Hook (0-15 s): the worst moment first, in close-up; villain''s line; one-word title slam on black'
+  - 'The deal (~50 s): flashback to a hopeful start; the villain appears small and cute and offers ''just a little'''
+  - 'The slide (~55 s): the hero gives in step by step; villain grows each time; surreal metaphor shots for the
+    psychology'
+  - 'Rock bottom (~25 s): consequence lands; near silence; the pet comforts the hero'
+  - 'The turn (~40 s): same temptation, different choice; the fixes happen as actions, never as lists'
+  - 'End (~15 s): villain shrinks to nothing; one-line moral; 2-word call to action on black'
+color_script: 'Light carries the story: cold blue/navy + magenta when the villain wins, warm sun/lamp gold when
+  the hero wins. Plan one palette per act.'
+night_wash: '#070A24'
+match_cut: One match cut between the hook and the rock-bottom echo of the same frame
+title_hold_seconds: 2.5
+close_up_ratio: at least 1 in every 3 shots
+characters:
+  reuse: 'Reuse the approved rigs in remotion-composer/projects/later (art.tsx, rig.tsx, sets.tsx). New films may
+    add a new villain and sets, but keep the hero''s construction style: big head (~1/3 body), huge white eyes with
+    small pupils, bold outlines, flat colors.'
+  hero: Theo — round cream face, round black glasses, messy brown hair with cowlick, oversized mustard hoodie
+  villain_template: Smoky ink creature, glowing magenta eyes and crescent grin, magenta rim light; small/cute ->
+    room-sized -> shrinking
+  pet: Mochi — round orange tabby, white chest patch
+deliverables:
+- renders/final.mp4 (1920x1080, 24 fps)
+- renders/<slug>_en.srt
+- 'renders/thumbnail.png: hero''s terrified face right third + villain grin left, one huge word top-left'
+- 'YouTube description: hook line, 2-sentence premise, closing line, music credit, 5 hashtags'
