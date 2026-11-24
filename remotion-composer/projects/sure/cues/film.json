@@ -1,0 +1,395 @@
+{
+ "duration_s": 42.375,
+ "vo": [
+  {
+   "id": "D01",
+   "at": 0.15,
+   "cap_y": 1450
+  },
+  {
+   "id": "T01",
+   "at": 2.78,
+   "cap_y": 1450
+  },
+  {
+   "id": "S01",
+   "at": 4.85,
+   "cap_y": 1450
+  },
+  {
+   "id": "P01",
+   "at": 7.65,
+   "cap_y": 1450
+  },
+  {
+   "id": "T02",
+   "at": 9.2,
+   "cap_y": 1450
+  },
+  {
+   "id": "D02",
+   "at": 10.4,
+   "cap_y": 1450
+  },
+  {
+   "id": "T03",
+   "at": 12.6,
+   "cap_y": 1450
+  },
+  {
+   "id": "M01",
+   "at": 13.55,
+   "cap_y": 1450
+  },
+  {
+   "id": "T04",
+   "at": 16.33,
+   "cap_y": 1450
+  },
+  {
+   "id": "S02",
+   "at": 16.9,
+   "cap_y": 1450
+  },
+  {
+   "id": "S02",
+   "at": 17.5,
+   "gain": 0.3,
+   "no_caption": true
+  },
+  {
+   "id": "S02",
+   "at": 18.1,
+   "gain": 0.25,
+   "no_caption": true
+  },
+  {
+   "id": "S02",
+   "at": 18.7,
+   "gain": 0.2,
+   "no_caption": true
+  },
+  {
+   "id": "T05",
+   "at": 22.7,
+   "cap_y": 1450
+  },
+  {
+   "id": "S03",
+   "at": 25.0,
+   "cap_y": 1450
+  },
+  {
+   "id": "S03",
+   "at": 25.3,
+   "gain": 0.5,
+   "no_caption": true
+  },
+  {
+   "id": "S03",
+   "at": 25.6,
+   "gain": 0.4,
+   "no_caption": true
+  },
+  {
+   "id": "T06",
+   "at": 26.7,
+   "cap_y": 1450
+  },
+  {
+   "id": "P02",
+   "at": 30.35,
+   "cap_y": 1450
+  },
+  {
+   "id": "P03",
+   "at": 32.35,
+   "cap_y": 1450
+  },
+  {
+   "id": "T07",
+   "at": 33.85,
+   "cap_y": 1450
+  },
+  {
+   "id": "P04",
+   "at": 35.4,
+   "cap_y": 1450
+  },
+  {
+   "id": "T08",
+   "at": 36.9,
+   "cap_y": 1450
+  },
+  {
+   "id": "N01",
+   "at": 37.75,
+   "cap_y": 1450
+  },
+  {
+   "id": "S04",
+   "at": 40.55,
+   "cap_y": 1450
+  },
+  {
+   "id": "T09",
+   "at": 41.95,
+   "cap_y": 1450
+  }
+ ],
+ "sfx": [
+  {
+   "name": "office_hum_8s",
+   "at": 0.0,
+   "gain": 0.3,
+   "dur": 8.0,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 8.0,
+   "gain": 0.2,
+   "dur": 8.0,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 16.0,
+   "gain": 0.25,
+   "dur": 4.5,
+   "fade": 0.2
+  },
+  {
+   "name": "keyboard_calm_4s",
+   "at": 0.0,
+   "gain": 0.3,
+   "dur": 0.6,
+   "fade": 0.2
+  },
+  {
+   "name": "slap",
+   "at": 3.3,
+   "gain": 0.95
+  },
+  {
+   "name": "pop_0",
+   "at": 3.32,
+   "gain": 0.8
+  },
+  {
+   "name": "bloop",
+   "at": 4.35,
+   "gain": 0.75
+  },
+  {
+   "name": "squeak_nods_3s",
+   "at": 4.65,
+   "gain": 0.35,
+   "dur": 2.85,
+   "fade": 0.2
+  },
+  {
+   "name": "slap",
+   "at": 9.74,
+   "gain": 0.95
+  },
+  {
+   "name": "pop_1",
+   "at": 9.76,
+   "gain": 0.8
+  },
+  {
+   "name": "bloop",
+   "at": 9.9,
+   "gain": 0.6
+  },
+  {
+   "name": "slap",
+   "at": 13.12,
+   "gain": 0.7
+  },
+  {
+   "name": "pop_2",
+   "at": 13.14,
+   "gain": 0.8
+  },
+  {
+   "name": "squeak",
+   "at": 13.12,
+   "gain": 0.45
+  },
+  {
+   "name": "squeak",
+   "at": 13.2,
+   "gain": 0.45
+  },
+  {
+   "name": "squeak",
+   "at": 13.29,
+   "gain": 0.45
+  },
+  {
+   "name": "ringtone",
+   "at": 13.28,
+   "gain": 0.7
+  },
+  {
+   "name": "squeak_nods_3s",
+   "at": 14.6,
+   "gain": 0.25,
+   "dur": 2.1,
+   "fade": 0.2
+  },
+  {
+   "name": "slap",
+   "at": 16.86,
+   "gain": 0.95
+  },
+  {
+   "name": "pop_3",
+   "at": 16.88,
+   "gain": 0.8
+  },
+  {
+   "name": "cascade",
+   "at": 16.78,
+   "gain": 0.6
+  },
+  {
+   "name": "bloop",
+   "at": 16.8,
+   "gain": 0.4
+  },
+  {
+   "name": "bloop",
+   "at": 16.96,
+   "gain": 0.4
+  },
+  {
+   "name": "bloop",
+   "at": 17.12,
+   "gain": 0.4
+  },
+  {
+   "name": "bloop",
+   "at": 17.28,
+   "gain": 0.4
+  },
+  {
+   "name": "pop_4",
+   "at": 18.5,
+   "gain": 0.7
+  },
+  {
+   "name": "pop_5",
+   "at": 18.75,
+   "gain": 0.7
+  },
+  {
+   "name": "pop_6",
+   "at": 19.0,
+   "gain": 0.7
+  },
+  {
+   "name": "pop_7",
+   "at": 19.25,
+   "gain": 0.75
+  },
+  {
+   "name": "squeak_nods_3s",
+   "at": 18.5,
+   "gain": 0.45,
+   "dur": 2.0,
+   "fade": 0.2
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 20.5,
+   "gain": 0.18,
+   "dur": 6.0,
+   "fade": 0.3
+  },
+  {
+   "name": "keyboard_frantic_5s",
+   "at": 20.5,
+   "gain": 0.35,
+   "dur": 2.0,
+   "fade": 0.1
+  },
+  {
+   "name": "keyboard_calm_4s",
+   "at": 22.5,
+   "gain": 0.2,
+   "dur": 2.25,
+   "fade": 0.2
+  },
+  {
+   "name": "paper_flutter",
+   "at": 23.9,
+   "gain": 0.5
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 26.5,
+   "gain": 0.08,
+   "dur": 3.75,
+   "fade": 0.3
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 30.25,
+   "gain": 0.3,
+   "dur": 4.2,
+   "fade": 0.05
+  },
+  {
+   "name": "record_scratch",
+   "at": 34.2,
+   "gain": 1.0
+  },
+  {
+   "name": "paper_flutter",
+   "at": 35.7,
+   "gain": 0.45
+  },
+  {
+   "name": "footsteps",
+   "at": 35.85,
+   "gain": 0.6,
+   "dur": 0.9,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 35.3,
+   "gain": 0.22,
+   "dur": 6.825,
+   "fade": 0.02
+  },
+  {
+   "name": "squeak",
+   "at": 40.4,
+   "gain": 0.5
+  },
+  {
+   "name": "squeak",
+   "at": 40.85,
+   "gain": 0.45
+  },
+  {
+   "name": "squeak",
+   "at": 41.3,
+   "gain": 0.45
+  }
+ ],
+ "silence": [
+  [
+   34.45,
+   35.3
+  ],
+  [
+   42.125,
+   42.375
+  ]
+ ]
+}

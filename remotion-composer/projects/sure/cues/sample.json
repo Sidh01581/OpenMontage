@@ -1,0 +1,16 @@
+{
+  "duration_s": 7.5,
+  "vo": [
+    {"id": "D01", "at": 0.15, "cap_y": 1450},
+    {"id": "T01", "at": 2.85, "cap_y": 1450},
+    {"id": "S01", "at": 4.85, "cap_y": 1450}
+  ],
+  "sfx": [
+    {"name": "office_hum_8s", "at": 0.0, "gain": 0.3, "dur": 7.5, "fade": 0.1},
+    {"name": "keyboard_calm_4s", "at": 0.0, "gain": 0.3, "dur": 0.6, "fade": 0.2},
+    {"name": "slap", "at": 3.3, "gain": 0.95},
+    {"name": "pop_0", "at": 3.32, "gain": 0.8},
+    {"name": "bloop", "at": 4.35, "gain": 0.75},
+    {"name": "squeak_nods_3s", "at": 4.65, "gain": 0.35, "dur": 2.85, "fade": 0.2}
+  ]
+}
