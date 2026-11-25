@@ -1,0 +1,23 @@
+{
+  "duration_s": 6.0,
+  "vo": [
+    {"id": "T01", "at": 0.35, "cap_y": 1450},
+    {"id": "T02", "at": 1.7, "cap_y": 1450},
+    {"id": "T03", "at": 3.85, "cap_y": 1450}
+  ],
+  "sfx": [
+    {"name": "office_hum_8s", "at": 0.0, "gain": 0.3, "dur": 6.0, "fade": 0.1},
+    {"name": "footsteps_3s", "at": 0.0, "gain": 0.9, "dur": 2.3, "fade": 0.05},
+    {"name": "slosh", "at": 0.2, "gain": 0.5},
+    {"name": "slosh", "at": 1.2, "gain": 0.45},
+    {"name": "hud_pop", "at": 0.38, "gain": 0.6},
+    {"name": "whoosh_fast", "at": 1.6, "gain": 0.7},
+    {"name": "keyboard_calm_4s", "at": 2.25, "gain": 0.35, "dur": 0.3, "fade": 0.1},
+    {"name": "footsteps_3s", "at": 4.2, "gain": 0.8, "dur": 0.8, "fade": 0.1},
+    {"name": "whoosh_fast", "at": 4.35, "gain": 0.9},
+    {"name": "slosh", "at": 4.5, "gain": 0.4},
+    {"name": "blip", "at": 4.55, "gain": 0.35},
+    {"name": "blip", "at": 4.7, "gain": 0.35},
+    {"name": "blip", "at": 4.85, "gain": 0.35}
+  ]
+}
