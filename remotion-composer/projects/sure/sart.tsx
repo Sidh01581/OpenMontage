@@ -23,8 +23,8 @@ export const S = {
 
 // ---------------------------------------------------------------- Dev (coworker)
 // Local: origin = head center, head r ~100. Faces screen RIGHT by default (flip for left).
-export const DevHead: React.FC<{ frame: number; talk?: number; lookX?: number; lookY?: number; smile?: boolean }> = ({ frame, talk = 0, lookX = 6, lookY = 2, smile = true }) => {
-  const fx = 14;
+export const DevHead: React.FC<{ frame: number; talk?: number; lookX?: number; lookY?: number; smile?: boolean; serious?: boolean; turn?: number }> = ({ frame, talk = 0, lookX = 6, lookY = 2, smile = true, serious = false, turn = 14 }) => {
+  const fx = turn;
   const blink = (frame + 7) % 80 < 4;
   // curly hair: ring of bumps around the top
   const curls = Array.from({ length: 11 }).map((_, i) => {
@@ -48,13 +48,18 @@ export const DevHead: React.FC<{ frame: number; talk?: number; lookX?: number; l
             <ellipse cx={x + fx} cy={y} rx={rx} ry={ry} fill="#FFFFFF" stroke={INK} strokeWidth={4} />
             <circle cx={x + fx + lookX} cy={y + lookY} r={9} fill={INK} />
             <circle cx={x + fx + lookX - 3} cy={y + lookY - 3} r={3} fill="#FFFFFF" />
+            {serious && <path d={i === 0 ? `M${x + fx - rx - 3},${y - ry - 4} L${x + fx + rx + 3},${y - ry - 4} L${x + fx + rx + 3},${y - ry * 0.05} L${x + fx - rx - 3},${y - ry * 0.45} Z` : `M${x + fx - rx - 3},${y - ry - 4} L${x + fx + rx + 3},${y - ry - 4} L${x + fx + rx + 3},${y - ry * 0.45} L${x + fx - rx - 3},${y - ry * 0.05} Z`} fill={S.devSkin} stroke={INK} strokeWidth={4} strokeLinejoin="round" />}
           </g>
         ))}
-      <path d={`M${fx - 56},-34 Q${fx - 32},-46 ${fx - 8},-36 M${fx + 22},-38 Q${fx + 42},-48 ${fx + 62},-36`} fill="none" stroke={S.devHairShade} strokeWidth={7} strokeLinecap="round" />
+      {serious
+        ? <path d={`M${fx - 60},-40 L${fx - 6},-22 M${fx + 20},-22 L${fx + 66},-40`} fill="none" stroke={S.devHairShade} strokeWidth={9} strokeLinecap="round" />
+        : <path d={`M${fx - 56},-34 Q${fx - 32},-46 ${fx - 8},-36 M${fx + 22},-38 Q${fx + 42},-48 ${fx + 62},-36`} fill="none" stroke={S.devHairShade} strokeWidth={7} strokeLinecap="round" />}
       <path d={`M${fx + 8},30 Q${fx + 20},44 ${fx + 6},48`} fill="none" stroke={INK} strokeWidth={4} strokeLinecap="round" />
       {talk > 0.05
         ? <ellipse cx={fx + 4} cy={70} rx={16 - talk * 3} ry={4 + talk * 13} fill="#5A1E24" stroke={INK} strokeWidth={4} />
-        : smile
+        : serious
+          ? <path d={`M${fx - 18},74 Q${fx + 4},64 ${fx + 26},74`} fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />
+          : smile
           ? <path d={`M${fx - 24},64 Q${fx + 4},86 ${fx + 32},62`} fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />
           : <path d={`M${fx - 14},70 L${fx + 22},70`} stroke={INK} strokeWidth={5} strokeLinecap="round" />}
     </g>

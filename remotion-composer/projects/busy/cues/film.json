@@ -1,0 +1,373 @@
+{
+ "duration_s": 41.0,
+ "vo": [
+  {
+   "id": "T01",
+   "at": 0.35,
+   "cap_y": 1450
+  },
+  {
+   "id": "T02",
+   "at": 1.7,
+   "cap_y": 1450
+  },
+  {
+   "id": "T03",
+   "at": 3.85,
+   "cap_y": 1450
+  },
+  {
+   "id": "T04",
+   "at": 6.1,
+   "cap_y": 1450
+  },
+  {
+   "id": "T05",
+   "at": 6.9,
+   "cap_y": 1450
+  },
+  {
+   "id": "T06",
+   "at": 10.7,
+   "cap_y": 1450
+  },
+  {
+   "id": "T07",
+   "at": 14.3,
+   "cap_y": 1450
+  },
+  {
+   "id": "T08",
+   "at": 17.6,
+   "cap_y": 1450
+  },
+  {
+   "id": "T09",
+   "at": 21.8,
+   "cap_y": 1450
+  },
+  {
+   "id": "T10",
+   "at": 24.6,
+   "cap_y": 1450
+  },
+  {
+   "id": "T11",
+   "at": 28.7,
+   "cap_y": 1450
+  },
+  {
+   "id": "T12",
+   "at": 30.8,
+   "cap_y": 1450
+  },
+  {
+   "id": "T13",
+   "at": 34.2,
+   "cap_y": 1450
+  },
+  {
+   "id": "T14",
+   "at": 36.1,
+   "cap_y": 1450
+  }
+ ],
+ "sfx": [
+  {
+   "name": "office_hum_8s",
+   "at": 0,
+   "gain": 0.28,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 8,
+   "gain": 0.28,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 16,
+   "gain": 0.28,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 24,
+   "gain": 0.28,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 32,
+   "gain": 0.28,
+   "dur": 5.582999999999998,
+   "fade": 0.05
+  },
+  {
+   "name": "footsteps_3s",
+   "at": 0,
+   "gain": 0.9,
+   "dur": 2.3,
+   "fade": 0.05
+  },
+  {
+   "name": "slosh",
+   "at": 0.2,
+   "gain": 0.5
+  },
+  {
+   "name": "slosh",
+   "at": 1.2,
+   "gain": 0.45
+  },
+  {
+   "name": "hud_pop",
+   "at": 0.38,
+   "gain": 0.6
+  },
+  {
+   "name": "whoosh_fast",
+   "at": 1.6,
+   "gain": 0.7
+  },
+  {
+   "name": "keyboard_calm_4s",
+   "at": 2.25,
+   "gain": 0.35,
+   "dur": 0.3,
+   "fade": 0.1
+  },
+  {
+   "name": "footsteps_3s",
+   "at": 4.2,
+   "gain": 0.8,
+   "dur": 0.8,
+   "fade": 0.1
+  },
+  {
+   "name": "whoosh_fast",
+   "at": 4.35,
+   "gain": 0.9
+  },
+  {
+   "name": "slosh",
+   "at": 4.5,
+   "gain": 0.4
+  },
+  {
+   "name": "blip",
+   "at": 4.55,
+   "gain": 0.35
+  },
+  {
+   "name": "blip",
+   "at": 4.7,
+   "gain": 0.35
+  },
+  {
+   "name": "blip",
+   "at": 4.85,
+   "gain": 0.35
+  },
+  {
+   "name": "footsteps_3s",
+   "at": 6.0,
+   "gain": 0.5,
+   "dur": 2.2,
+   "fade": 0.05
+  },
+  {
+   "name": "slosh",
+   "at": 6.6,
+   "gain": 0.4
+  },
+  {
+   "name": "footsteps_3s",
+   "at": 8.208,
+   "gain": 0.5,
+   "dur": 1.0,
+   "fade": 0.1
+  },
+  {
+   "name": "whoosh_fast",
+   "at": 9.15,
+   "gain": 0.45
+  },
+  {
+   "name": "watch_tick",
+   "at": 9.75,
+   "gain": 0.6
+  },
+  {
+   "name": "watch_tick",
+   "at": 10.0,
+   "gain": 0.6
+  },
+  {
+   "name": "watch_tick",
+   "at": 10.25,
+   "gain": 0.6
+  },
+  {
+   "name": "footsteps_3s",
+   "at": 10.417,
+   "gain": 0.6,
+   "dur": 1.8,
+   "fade": 0.2
+  },
+  {
+   "name": "sparkle",
+   "at": 12.25,
+   "gain": 0.5
+  },
+  {
+   "name": "step",
+   "at": 12.63,
+   "gain": 0.7
+  },
+  {
+   "name": "step",
+   "at": 13.46,
+   "gain": 0.7
+  },
+  {
+   "name": "chair_creak",
+   "at": 14.25,
+   "gain": 0.7
+  },
+  {
+   "name": "knuckle_crack",
+   "at": 15.38,
+   "gain": 0.85
+  },
+  {
+   "name": "keyboard_calm_4s",
+   "at": 15.95,
+   "gain": 0.4,
+   "dur": 0.45,
+   "fade": 0.1
+  },
+  {
+   "name": "window_pops",
+   "at": 16.42,
+   "gain": 0.6
+  },
+  {
+   "name": "keyboard_frantic_5s",
+   "at": 16.42,
+   "gain": 0.3,
+   "dur": 2.0,
+   "fade": 0.05
+  },
+  {
+   "name": "keyboard_frantic_5s",
+   "at": 18.417,
+   "gain": 0.8,
+   "dur": 1.58,
+   "fade": 0.05
+  },
+  {
+   "name": "keyboard_frantic_5s",
+   "at": 20.0,
+   "gain": 0.4,
+   "dur": 1.7,
+   "fade": 0.1
+  },
+  {
+   "name": "chair_squeak_hi",
+   "at": 21.72,
+   "gain": 0.6
+  },
+  {
+   "name": "heels",
+   "at": 22.6,
+   "gain": 0.45,
+   "dur": 0.8,
+   "fade": 0.05
+  },
+  {
+   "name": "heels",
+   "at": 23.417,
+   "gain": 0.8,
+   "dur": 1.58,
+   "fade": 0.05
+  },
+  {
+   "name": "whoosh_fast",
+   "at": 25.15,
+   "gain": 0.6
+  },
+  {
+   "name": "level_up",
+   "at": 25.25,
+   "gain": 0.7
+  },
+  {
+   "name": "keyboard_frantic_5s",
+   "at": 25.2,
+   "gain": 0.7,
+   "dur": 1.59,
+   "fade": 0.05
+  },
+  {
+   "name": "keyboard_frantic_5s",
+   "at": 26.792,
+   "gain": 0.55,
+   "dur": 1.79,
+   "fade": 0.05
+  },
+  {
+   "name": "heels",
+   "at": 28.75,
+   "gain": 0.5,
+   "ramp_to": 0.08
+  },
+  {
+   "name": "keyboard_calm_4s",
+   "at": 28.6,
+   "gain": 0.4,
+   "dur": 1.2,
+   "fade": 0.4
+  },
+  {
+   "name": "chair_creak",
+   "at": 30.6,
+   "gain": 0.8
+  },
+  {
+   "name": "deflate",
+   "at": 30.75,
+   "gain": 0.6
+  },
+  {
+   "name": "slurp",
+   "at": 31.2,
+   "gain": 0.7
+  },
+  {
+   "name": "scroll_ticks",
+   "at": 32.3,
+   "gain": 0.6
+  },
+  {
+   "name": "shutter",
+   "at": 36.99,
+   "gain": 0.9
+  },
+  {
+   "name": "ding",
+   "at": 37.62,
+   "gain": 0.7
+  },
+  {
+   "name": "sparkle",
+   "at": 37.9,
+   "gain": 0.4
+  }
+ ]
+}
