@@ -64,7 +64,12 @@ export const DevWalker: React.FC<{
   x: number; y: number; s?: number; flip?: boolean; frame: number; phase?: number; speed?: number;
   talk?: number; lookX?: number; lookY?: number; serious?: boolean; headTilt?: number; turn?: number;
   coffee?: boolean; papers?: boolean; paperLabel?: string; watch?: number; nod?: number;
-}> = ({ x, y, s = 1, flip = false, frame, phase = 0, speed = 1, talk = 0, lookX = 10, lookY = 2, serious = true, headTilt = 0, turn = 30, coffee = true, papers = true, paperLabel, watch = 0, nod = 0 }) => {
+  // Optional outfit (defaults = BUSY. sweater + chinos): torso node replaces the sweater; legs/arms split into
+  // clothed upper + skin lower segments; foot replaces the shoe; frontProp replaces the coffee; backProp sits behind.
+  torso?: React.ReactNode; legs?: { thigh: string; thighShade: string; shin: string; shinShade: string };
+  sleeves?: { front: string; back: string; skin: string; skinShade: string }; foot?: (back: boolean) => React.ReactNode;
+  frontProp?: React.ReactNode; backProp?: React.ReactNode; smile?: boolean;
+}> = ({ x, y, s = 1, flip = false, frame, phase = 0, speed = 1, talk = 0, lookX = 10, lookY = 2, serious = true, headTilt = 0, turn = 30, coffee = true, papers = true, paperLabel, watch = 0, nod = 0, torso, legs, sleeves, foot, frontProp, backProp, smile }) => {
   const ph = phase * Math.PI; // one step = half a cycle
   const A = 24 * speed;
   const bob = -Math.abs(Math.sin(ph)) * 10 * speed;
@@ -79,11 +84,17 @@ export const DevWalker: React.FC<{
   // planted foot stays on the ground line: lift the body so the lower foot touches y = THIGH+SHIN-6
   const ground = Math.max(fF[1], fB[1]);
   const lift = THIGH + SHIN - 6 - ground;
-  const shoe = (f: Pt, deg: number) => (
+  const shoe = (f: Pt, deg: number, back = false) => (
     <g transform={`translate(${f[0]} ${f[1]}) rotate(${-deg * 0.4})`}>
-      <path d="M-18,-8 L30,-8 Q50,-6 50,8 L-20,8 Z" fill={B.shoe} stroke={INK} strokeWidth={SW} strokeLinejoin="round" />
+      {foot ? foot(back) : <path d="M-18,-8 L30,-8 Q50,-6 50,8 L-20,8 Z" fill={B.shoe} stroke={INK} strokeWidth={SW} strokeLinejoin="round" />}
     </g>
   );
+  const leg = (h: Pt, k: Pt, f: Pt, front: boolean) => legs
+    ? <><Limb d={`M${k[0]},${k[1]} L${f[0]},${f[1]}`} color={front ? legs.shin : legs.shinShade} w={front ? 36 : 34} /><Limb d={`M${h[0]},${h[1]} L${k[0]},${k[1]}`} color={front ? legs.thigh : legs.thighShade} w={front ? 52 : 50} /></>
+    : <Limb d={p3(h, k, f)} color={front ? B.pants : B.pantsShade} w={front ? 48 : 46} />;
+  const arm = (sh: Pt, el: Pt, ha: Pt, front: boolean) => sleeves
+    ? <><Limb d={`M${el[0]},${el[1]} L${ha[0]},${ha[1]}`} color={front ? sleeves.skin : sleeves.skinShade} w={front ? 36 : 34} /><Limb d={`M${sh[0]},${sh[1]} L${el[0]},${el[1]}`} color={front ? sleeves.front : sleeves.back} w={front ? 46 : 42} /></>
+    : <Limb d={p3(sh, el, ha)} color={front ? S.sweater : S.sweaterShade} w={front ? 44 : 40} />;
   // arms: coffee arm out front (steady: coffee stays level), paper arm clamps the stack to the chest
   const shF: Pt = [26, -196], shB: Pt = [-18, -194];
   const pump = Math.sin(ph) * 6 * speed;
@@ -95,37 +106,43 @@ export const DevWalker: React.FC<{
   const slosh = Math.sin(ph * 2) * speed;
   return (
     <g transform={`translate(${x} ${y + (lift + bob) * s}) scale(${flip ? -s : s} ${s})`}>
+      {backProp}
       {/* back leg */}
-      <Limb d={p3(hipB, kB, fB)} color={B.pantsShade} w={46} />
-      {shoe(fB, aB)}
+      {leg(hipB, kB, fB, false)}
+      {shoe(fB, aB, true)}
       <g transform={`rotate(${lean} 0 0)`}>
         {/* back arm + paper stack (behind torso edge, in front of back leg) */}
-        <Limb d={p3(shB, elB, haB)} color={S.sweaterShade} w={40} />
+        {arm(shB, elB, haB, false)}
         {papers && (watch < 0.5
           ? <g transform={`translate(${haB[0] - 34} ${haB[1] - 6})`}><PaperStack label={paperLabel} r={-10 - pump} s={0.72} /></g>
           : <g transform="translate(-40 -120)"><PaperStack label={paperLabel} r={-80} s={0.66} /></g>)}
         {watch < 0.5 && <circle cx={haB[0]} cy={haB[1]} r={17} fill={S.devSkinShade} stroke={INK} strokeWidth={5} />}
       </g>
       {/* front leg */}
-      <Limb d={p3(hipF, kF, fF)} color={B.pants} w={48} />
+      {leg(hipF, kF, fF, true)}
       {shoe(fF, aF)}
       <g transform={`rotate(${lean} 0 0)`}>
         {/* torso: lanky sweater */}
-        <path d="M-50,14 C-62,-60 -60,-150 -44,-196 C-20,-214 30,-214 54,-196 C70,-150 70,-60 58,14 Z" fill={S.sweater} stroke={INK} strokeWidth={SW} strokeLinejoin="round" />
-        <path d="M-50,0 L58,0" stroke={S.sweaterShade} strokeWidth={10} />
-        {[0, 1, 2].map((i) => <path key={i} d={`M-46,${-150 + i * 44} L60,${-150 + i * 44}`} stroke={S.sweaterShade} strokeWidth={4} opacity={0.55} />)}
+        {torso ?? (
+          <>
+            <path d="M-50,14 C-62,-60 -60,-150 -44,-196 C-20,-214 30,-214 54,-196 C70,-150 70,-60 58,14 Z" fill={S.sweater} stroke={INK} strokeWidth={SW} strokeLinejoin="round" />
+            <path d="M-50,0 L58,0" stroke={S.sweaterShade} strokeWidth={10} />
+            {[0, 1, 2].map((i) => <path key={i} d={`M-46,${-150 + i * 44} L60,${-150 + i * 44}`} stroke={S.sweaterShade} strokeWidth={4} opacity={0.55} />)}
+          </>
+        )}
         <rect x={-10} y={-228} width={36} height={36} fill={S.devSkinShade} stroke={INK} strokeWidth={SW} />
-        <path d="M-26,-204 Q8,-184 42,-204" fill="none" stroke={S.sweaterShade} strokeWidth={9} />
+        {!torso && <path d="M-26,-204 Q8,-184 42,-204" fill="none" stroke={S.sweaterShade} strokeWidth={9} />}
         <g transform={`translate(8 ${-318 + nod * 14}) rotate(${headTilt + nod * 10 + watch * 12 + Math.sin(ph) * 1.5 * speed} 0 100)`}>
-          <DevHead frame={frame} talk={talk} lookX={lookX} lookY={lookY} serious={serious} smile={!serious} turn={turn} />
+          <DevHead frame={frame} talk={talk} lookX={lookX} lookY={lookY} serious={serious} smile={smile ?? !serious} turn={turn} />
         </g>
         {/* front arm + coffee */}
-        <Limb d={p3(shF, elF, haF)} color={S.sweater} w={44} />
-        {coffee && <g transform={`translate(${haF[0] + 4} ${haF[1] - 6}) rotate(${-lean})`}><CoffeeCup frame={frame} slosh={slosh} s={0.8} /></g>}
+        {arm(shF, elF, haF, true)}
+        {frontProp && <g transform={`translate(${haF[0] + 4} ${haF[1] - 6}) rotate(${-lean})`}>{frontProp}</g>}
+        {coffee && !frontProp && <g transform={`translate(${haF[0] + 4} ${haF[1] - 6}) rotate(${-lean})`}><CoffeeCup frame={frame} slosh={slosh} s={0.8} /></g>}
         <circle cx={haF[0]} cy={haF[1]} r={19} fill={S.devSkin} stroke={INK} strokeWidth={5} />
         {watch >= 0.5 && (
           <g>
-            <Limb d={p3(shB, elB, haB)} color={S.sweaterShade} w={40} />
+            {arm(shB, elB, haB, false)}
             <circle cx={haB[0]} cy={haB[1]} r={17} fill={S.devSkinShade} stroke={INK} strokeWidth={5} />
             <g transform={`translate(${haB[0] - 18} ${haB[1] + 14})`}><circle r={14} fill="#E8E2D2" stroke={INK} strokeWidth={4} /></g>
           </g>

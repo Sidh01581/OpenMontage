@@ -41,7 +41,7 @@ export const DevHead: React.FC<{ frame: number; talk?: number; lookX?: number; l
       {[-60, -24, 12, 48].map((x, i) => <circle key={i} cx={x + fx * 0.5} cy={-70 + (i % 2) * 6} r={26} fill={S.devHair} stroke={INK} strokeWidth={5} />)}
       <rect x={-90} y={-76} width={180} height={30} fill={S.devHair} />
       {/* freckles */}
-      {[[-36, 50], [-24, 58], [56, 50], [68, 56]].map(([x, y], i) => <circle key={i} cx={x + fx} cy={y} r={3} fill={S.devHairShade} />)}
+      {[[-36, 50], [-24, 58], [56, 50], [68, 56]].map(([x, y], i) => (x + fx > 99 ? null : <circle key={i} cx={x + fx} cy={y} r={3} fill={S.devHairShade} />))}
       {[[-30, 8, 24, 28], [40, 6, 21, 26]].map(([x, y, rx, ry], i) =>
         blink ? <path key={i} d={`M${x + fx - rx},${y} Q${x + fx},${y + 10} ${x + fx + rx},${y}`} fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" /> : (
           <g key={i}>

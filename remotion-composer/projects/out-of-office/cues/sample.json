@@ -1,0 +1,17 @@
+{
+  "duration_s": 9.75,
+  "vo": [
+    {"id": "T01", "at": 0.3, "cap_y": 1450}
+  ],
+  "sfx": [
+    {"name": "waves_9s", "at": 0.0, "gain": 0.45, "dur": 9.75, "fade": 0.2},
+    {"name": "gulls_3s", "at": 0.2, "gain": 0.35},
+    {"name": "hud_pop", "at": 0.36, "gain": 0.55},
+    {"name": "slurp", "at": 0.9, "gain": 0.45},
+    {"name": "office_hum_8s", "at": 2.5, "gain": 0.3, "dur": 2.0, "fade": 0.05},
+    {"name": "slurp", "at": 4.75, "gain": 0.7},
+    {"name": "crab_clicks", "at": 6.8, "gain": 0.5},
+    {"name": "gulls_3s", "at": 7.6, "gain": 0.25, "dur": 1.2},
+    {"name": "sparkle", "at": 8.5, "gain": 0.35}
+  ]
+}
