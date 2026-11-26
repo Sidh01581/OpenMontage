@@ -1,0 +1,314 @@
+{
+ "duration_s": 44.83,
+ "vo": [
+  {
+   "id": "D01",
+   "at": 2.2,
+   "cap_y": 1450
+  },
+  {
+   "id": "S01",
+   "at": 3.5,
+   "cap_y": 1450
+  },
+  {
+   "id": "D02",
+   "at": 5.65,
+   "cap_y": 1450
+  },
+  {
+   "id": "S02",
+   "at": 7.15,
+   "cap_y": 1450
+  },
+  {
+   "id": "D03",
+   "at": 8.6,
+   "cap_y": 1450
+  },
+  {
+   "id": "S03",
+   "at": 9.95,
+   "cap_y": 1450
+  },
+  {
+   "id": "D04",
+   "at": 11.15,
+   "cap_y": 1450
+  },
+  {
+   "id": "S04",
+   "at": 13.85,
+   "cap_y": 1450
+  },
+  {
+   "id": "T01",
+   "at": 17.3,
+   "cap_y": 1450
+  },
+  {
+   "id": "S05",
+   "at": 19.4,
+   "cap_y": 1450
+  },
+  {
+   "id": "D05",
+   "at": 21.7,
+   "cap_y": 1450
+  },
+  {
+   "id": "S06",
+   "at": 24.2,
+   "cap_y": 1450
+  },
+  {
+   "id": "P01",
+   "at": 28.4,
+   "cap_y": 1450
+  },
+  {
+   "id": "D06",
+   "at": 30.35,
+   "cap_y": 1450
+  },
+  {
+   "id": "S07",
+   "at": 33.3,
+   "cap_y": 1450
+  },
+  {
+   "id": "S08",
+   "at": 38.8,
+   "cap_y": 1450
+  },
+  {
+   "id": "D07",
+   "at": 40.4,
+   "cap_y": 1450
+  },
+  {
+   "id": "S09",
+   "at": 41.8,
+   "cap_y": 1450
+  }
+ ],
+ "sfx": [
+  {
+   "name": "ping",
+   "at": 0.15,
+   "gain": 0.7
+  },
+  {
+   "name": "hud_pop",
+   "at": 0.45,
+   "gain": 0.45
+  },
+  {
+   "name": "mouse_clicks",
+   "at": 1.33,
+   "gain": 0.5,
+   "dur": 0.1
+  },
+  {
+   "name": "knuckle_crack",
+   "at": 1.8,
+   "gain": 0.8
+  },
+  {
+   "name": "typing_burst",
+   "at": 3.0,
+   "gain": 0.6,
+   "dur": 0.38
+  },
+  {
+   "name": "enter_key",
+   "at": 3.4,
+   "gain": 0.7
+  },
+  {
+   "name": "error_buzz",
+   "at": 3.42,
+   "gain": 0.55
+  },
+  {
+   "name": "hud_pop",
+   "at": 3.55,
+   "gain": 0.25
+  },
+  {
+   "name": "keyboard_calm_4s",
+   "at": 5.6,
+   "gain": 0.6,
+   "dur": 1.4
+  },
+  {
+   "name": "enter_key",
+   "at": 7.06,
+   "gain": 0.7
+  },
+  {
+   "name": "error_buzz",
+   "at": 7.08,
+   "gain": 0.6
+  },
+  {
+   "name": "enter_key",
+   "at": 9.0,
+   "gain": 0.45
+  },
+  {
+   "name": "enter_key",
+   "at": 9.69,
+   "gain": 0.75
+  },
+  {
+   "name": "error_buzz",
+   "at": 9.71,
+   "gain": 0.65
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 1.75,
+   "gain": 0.25,
+   "dur": 8.0,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 9.75,
+   "gain": 0.25,
+   "dur": 8.0,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 17.75,
+   "gain": 0.25,
+   "dur": 8.0,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 25.75,
+   "gain": 0.25,
+   "dur": 8.0,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 33.75,
+   "gain": 0.25,
+   "dur": 8.0,
+   "fade": 0.1
+  },
+  {
+   "name": "keyboard_calm_4s",
+   "at": 11.3,
+   "gain": 0.6,
+   "dur": 2.0
+  },
+  {
+   "name": "enter_key",
+   "at": 13.5,
+   "gain": 0.85
+  },
+  {
+   "name": "error_buzz",
+   "at": 13.66,
+   "gain": 0.7
+  },
+  {
+   "name": "hud_pop",
+   "at": 13.92,
+   "gain": 0.3
+  },
+  {
+   "name": "deflate",
+   "at": 16.3,
+   "gain": 0.3
+  },
+  {
+   "name": "typing_burst",
+   "at": 18.75,
+   "gain": 0.5,
+   "dur": 0.45
+  },
+  {
+   "name": "enter_key",
+   "at": 19.3,
+   "gain": 0.7
+  },
+  {
+   "name": "error_buzz",
+   "at": 19.33,
+   "gain": 0.7
+  },
+  {
+   "name": "hud_pop",
+   "at": 19.6,
+   "gain": 0.3
+  },
+  {
+   "name": "enter_key",
+   "at": 24.12,
+   "gain": 0.7
+  },
+  {
+   "name": "error_buzz",
+   "at": 24.16,
+   "gain": 0.75
+  },
+  {
+   "name": "hud_pop",
+   "at": 24.7,
+   "gain": 0.45
+  },
+  {
+   "name": "keyboard_calm_4s",
+   "at": 30.4,
+   "gain": 0.35,
+   "dur": 2.4
+  },
+  {
+   "name": "enter_key",
+   "at": 33.15,
+   "gain": 0.8
+  },
+  {
+   "name": "error_buzz",
+   "at": 33.2,
+   "gain": 0.85
+  },
+  {
+   "name": "deflate",
+   "at": 35.6,
+   "gain": 0.45
+  },
+  {
+   "name": "thud",
+   "at": 36.4,
+   "gain": 0.9
+  },
+  {
+   "name": "paw_keys",
+   "at": 37.05,
+   "gain": 0.6
+  },
+  {
+   "name": "success_chime",
+   "at": 38.6,
+   "gain": 0.7
+  },
+  {
+   "name": "ping",
+   "at": 41.78,
+   "gain": 0.35
+  }
+ ],
+ "silence": [
+  [
+   44.5,
+   44.83
+  ]
+ ]
+}

@@ -37,26 +37,42 @@ export const Watch: React.FC<{ r?: number; ang?: number; h?: number; m?: number 
 
 // ---------------------------------------------------------------- Dev seated at his desk (side view, faces screen RIGHT)
 // Local origin = hip center on the chair. Desk top at y = -40, keyboard x 130..230, monitor at x ~ 360 (screen faces Dev).
-export type DevDeskPose = "type" | "upright" | "slump" | "phone" | "knuckles";
+export type DevDeskPose = "type" | "upright" | "slump" | "phone" | "knuckles" | "facedown";
 export const DevSeated: React.FC<{
   x: number; y: number; s?: number; frame: number; pose: DevDeskPose; typeSpeed?: number; talk?: number;
   lookX?: number; lookY?: number; serious?: boolean; sweat?: number; turn?: number; headTilt?: number; sip?: number; glow?: number;
-  screen?: React.ReactNode; coffeeOnDesk?: boolean; crack?: number;
-}> = ({ x, y, s = 1, frame, pose, typeSpeed = 0, talk = 0, lookX = 16, lookY = 4, serious = true, sweat = 0, turn = 30, headTilt = 0, sip = 0, glow = 0, screen, coffeeOnDesk = true, crack = 0 }) => {
-  const lean = pose === "upright" ? -4 : pose === "slump" || pose === "phone" ? -20 : 8;
-  const sink = pose === "slump" || pose === "phone" ? 26 : pose === "upright" ? -14 : 0;
+  screen?: React.ReactNode; coffeeOnDesk?: boolean; crack?: number; deskless?: boolean;
+  down?: number; // facedown only: 0 = sitting (type pose) .. 1 = head down on the desk beside the keyboard, arms limp
+  natural?: boolean; // opt-in (PASSWORD NIGHTMARE. on): flexible short neck bending toward the screen, relaxed shoulders, bent elbows
+}> = ({ x, y, s = 1, frame, pose, typeSpeed = 0, talk = 0, lookX = 16, lookY = 4, serious = true, sweat = 0, turn = 30, headTilt = 0, sip = 0, glow = 0, screen, coffeeOnDesk = true, crack = 0, deskless = false, down = 1, natural = false }) => {
+  const fd = pose === "facedown" ? Math.max(0, Math.min(1, down)) : 0;
+  const lean0 = pose === "upright" ? -4 : pose === "slump" || pose === "phone" ? -20 : 8;
+  const nat = natural && (pose === "type" || pose === "upright" || pose === "knuckles");
+  const lean = pose === "facedown" ? lerp(8, 40, fd) : nat ? (pose === "upright" ? 10 : 16) : lean0;
+  const sink0 = pose === "slump" || pose === "phone" ? 26 : pose === "upright" ? -14 : 0;
+  const sink = sink0 + 20 * fd;
   const tr = (p: Pt): Pt => { const q = rot(p, lean); return [q[0], q[1] + sink]; };
-  const shF = tr([26, -196]), shB = tr([-18, -194]);
+  const shF = tr(nat ? [26, -188] : [26, -196]), shB = tr(nat ? [-18, -186] : [-18, -194]);
   const jit = (k: number) => (typeSpeed > 0 ? Math.sin(frame * typeSpeed + k) * 8 : 0);
   let hF: Pt = [196, -58 + jit(0)], hB: Pt = [146, -56 + jit(2.1)];
   if (pose === "upright") { hF = [204, -60 + jit(0) * 1.4]; hB = [152, -58 + jit(2.1) * 1.4]; }
   if (pose === "knuckles") { const c = Math.sin(crack * Math.PI); hF = [120 + c * 10, -150 - c * 10]; hB = [110, -146]; }
   if (pose === "slump") { hF = lerpP([70, -110 + sink], [52, -250 + sink], sip); hB = [10, -70 + sink]; }
   if (pose === "phone") { hF = [96, -170 + sink]; hB = [70, -150 + sink]; }
+  if (pose === "facedown") { hF = lerpP(hF, [196, 36], fd); hB = lerpP(hB, [156, 28], fd); }
+  if (nat && pose !== "knuckles") { const k = pose === "upright" ? 1.4 : 1; hF = [140, -48 + jit(0) * k]; hB = [116, -46 + jit(2.1) * k]; }
   const elF = ik(shF, hF, 82, 78, 1), elB = ik(shB, hB, 82, 78, 1);
   const headP = tr([8, -318]);
+  // facedown: the head hinges at the neck and comes to rest face-down on the desk (crown toward the monitor)
+  const neckP = lerpP([headP[0], headP[1] + 100], tr([8, -222]), fd);
+  const headRot = lerp(lean * 0.5 + headTilt, 95, fd);
+  // natural: a short flexible neck rises out of the collar and bends forward toward the screen; the head hangs off its top
+  const nBase = tr([8, -192]), nTop = tr([20, -252]), nCtl = tr([10, -232]);
+  const nTilt = lean * 0.4 + 6 + headTilt;
+  const bx = -40 * fd; // facedown: the chair rolls back a little so his head lands beside the keyboard, clear of the monitor
   return (
     <g transform={`translate(${x} ${y}) scale(${s})`}>
+      <g transform={`translate(${bx} 0)`}>
       {/* chair */}
       <rect x={-96} y={-170 + sink * 0.3} width={40} height={190} rx={16} fill={C.chair} stroke={INK} strokeWidth={SW} transform={`rotate(${lean * 0.6} -76 20)`} />
       <rect x={-80} y={14} width={150} height={30} rx={12} fill={C.chair} stroke={INK} strokeWidth={SW} />
@@ -70,20 +86,23 @@ export const DevSeated: React.FC<{
       <Limb d={`M10,${10 + sink * 0.3} L${126 + sink},${24 + sink * 0.2} L${142 + sink * 1.4},152`} color={B.pants} w={48} />
       <path d={`M${120 + sink * 1.4},146 L${176 + sink * 1.4},146 Q${190 + sink * 1.4},150 ${188 + sink * 1.4},160 L${118 + sink * 1.4},162 Z`} fill={B.shoe} stroke={INK} strokeWidth={SW} strokeLinejoin="round" />
       {/* torso + head */}
+      {nat && <Limb d={`M${nBase[0]},${nBase[1]} Q${nCtl[0]},${nCtl[1]} ${nTop[0]},${nTop[1]}`} color={S.devSkinShade} w={34} />}
       <g transform={`translate(0 ${sink}) rotate(${lean} 0 0)`}>
         <path d="M-50,14 C-62,-60 -60,-150 -44,-196 C-20,-214 30,-214 54,-196 C70,-150 70,-60 58,14 Z" fill={S.sweater} stroke={INK} strokeWidth={SW} strokeLinejoin="round" />
         {[0, 1, 2].map((i) => <path key={i} d={`M-46,${-150 + i * 44} L60,${-150 + i * 44}`} stroke={S.sweaterShade} strokeWidth={4} opacity={0.55} />)}
-        <rect x={-10} y={-228} width={36} height={36} fill={S.devSkinShade} stroke={INK} strokeWidth={SW} />
+        {!nat && <rect x={-10} y={-228} width={36} height={36} fill={S.devSkinShade} stroke={INK} strokeWidth={SW} />}
         <path d="M-26,-204 Q8,-184 42,-204" fill="none" stroke={S.sweaterShade} strokeWidth={9} />
       </g>
-      <g transform={`translate(${headP[0]} ${headP[1]}) rotate(${lean * 0.5 + headTilt} 0 100)`}>
-        <DevHead frame={frame} talk={talk} lookX={lookX} lookY={lookY} serious={serious} smile={!serious} turn={turn} />
+      <g transform={nat ? `translate(${nTop[0]} ${nTop[1]}) rotate(${nTilt}) translate(0 -92)` : pose === "facedown" ? `translate(${neckP[0]} ${neckP[1]}) rotate(${headRot}) translate(0 -100)` : `translate(${headP[0]} ${headP[1]}) rotate(${lean * 0.5 + headTilt} 0 100)`}>
+        <DevHead frame={frame} talk={talk} lookX={lookX} lookY={lookY} serious={serious} smile={!serious} turn={turn} closed={fd > 0.6} />
         {sweat > 0 && [[-70, -40], [86, -30], [-60, 20]].slice(0, sweat).map(([sx, sy], i) => {
           const ph = ((frame + i * 9) % 22) / 22;
           return <path key={i} d={`M${sx},${sy + ph * 40} q-8,14 0,20 q8,-6 0,-20 Z`} fill="#9FD3F0" stroke={INK} strokeWidth={3} opacity={1 - ph * 0.6} />;
         })}
       </g>
-      {/* desk, keyboard, monitor (screen faces Dev), coffee */}
+      </g>
+      {/* desk, keyboard, monitor (screen faces Dev), coffee — skipped when deskless (the shot draws its own table) */}
+      {!deskless && <>
       <rect x={60} y={-40} width={480} height={24} rx={5} fill={P.deskTop} stroke={INK} strokeWidth={SW} />
       <rect x={500} y={-16} width={20} height={170} fill={P.metal} stroke={INK} strokeWidth={SW} />
       <path d={`M120,-44 L240,-44 L236,-56 L124,-56 Z`} fill="#3A3F4A" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
@@ -93,7 +112,9 @@ export const DevSeated: React.FC<{
       <path d="M352,-320 L392,-326 L398,-120 L358,-116 Z" fill="#3A3F4A" stroke={INK} strokeWidth={SW} strokeLinejoin="round" />
       <path d="M354,-316 L360,-120" stroke={glow > 0 ? "#BFE3FF" : "#CFE3FF"} strokeWidth={6} strokeLinecap="round" />
       {screen}
-      {coffeeOnDesk && pose !== "slump" && <g transform="translate(280 -60)"><CoffeeCup frame={frame} s={0.62} steam={pose !== "upright"} /></g>}
+      {coffeeOnDesk && pose !== "slump" && pose !== "facedown" && <g transform="translate(280 -60)"><CoffeeCup frame={frame} s={0.62} steam={pose !== "upright"} /></g>}
+      </>}
+      <g transform={`translate(${bx} 0)`}>
       {/* front arm (over the desk) */}
       <Limb d={p3(shF, elF, hF)} color={S.sweater} w={44} />
       {pose === "slump" && <g transform={`translate(${hF[0] + 8} ${hF[1] - 6}) rotate(${-10 - sip * 25})`}><CoffeeCup frame={frame} s={0.7} /></g>}
@@ -105,6 +126,7 @@ export const DevSeated: React.FC<{
       )}
       <circle cx={hF[0]} cy={hF[1]} r={19} fill={S.devSkin} stroke={INK} strokeWidth={5} />
       {pose === "knuckles" && crack > 0.4 && crack < 0.7 && <text x={hF[0] + 30} y={hF[1] - 40} fontFamily={font} fontWeight={900} fontSize={34} fill={INK}>CRACK</text>}
+      </g>
     </g>
   );
 };

@@ -23,9 +23,9 @@ export const S = {
 
 // ---------------------------------------------------------------- Dev (coworker)
 // Local: origin = head center, head r ~100. Faces screen RIGHT by default (flip for left).
-export const DevHead: React.FC<{ frame: number; talk?: number; lookX?: number; lookY?: number; smile?: boolean; serious?: boolean; turn?: number }> = ({ frame, talk = 0, lookX = 6, lookY = 2, smile = true, serious = false, turn = 14 }) => {
+export const DevHead: React.FC<{ frame: number; talk?: number; lookX?: number; lookY?: number; smile?: boolean; serious?: boolean; turn?: number; closed?: boolean }> = ({ frame, talk = 0, lookX = 6, lookY = 2, smile = true, serious = false, turn = 14, closed = false }) => {
   const fx = turn;
-  const blink = (frame + 7) % 80 < 4;
+  const blink = closed || (frame + 7) % 80 < 4;
   // curly hair: ring of bumps around the top
   const curls = Array.from({ length: 11 }).map((_, i) => {
     const a = Math.PI * (1.05 + (i / 10) * 0.9);
