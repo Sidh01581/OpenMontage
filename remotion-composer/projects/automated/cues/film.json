@@ -1,0 +1,341 @@
+{
+ "duration_s": 58.75,
+ "vo": [
+  {
+   "id": "R01",
+   "at": 3.0,
+   "cap_y": 1450
+  },
+  {
+   "id": "D01",
+   "at": 6.4,
+   "cap_y": 1450
+  },
+  {
+   "id": "D02",
+   "at": 10.85,
+   "cap_y": 1450
+  },
+  {
+   "id": "T01",
+   "at": 15.27,
+   "cap_y": 1450
+  },
+  {
+   "id": "D03",
+   "at": 16.53,
+   "cap_y": 1450
+  },
+  {
+   "id": "R02",
+   "at": 17.64,
+   "cap_y": 1450
+  },
+  {
+   "id": "R03",
+   "at": 18.84,
+   "cap_y": 1450
+  },
+  {
+   "id": "P01",
+   "at": 21.62,
+   "cap_y": 1450
+  },
+  {
+   "id": "D04",
+   "at": 24.82,
+   "cap_y": 1450
+  },
+  {
+   "id": "P02",
+   "at": 27.75,
+   "cap_y": 1450
+  },
+  {
+   "id": "D05",
+   "at": 31.19,
+   "cap_y": 1450
+  },
+  {
+   "id": "P03",
+   "at": 36.11,
+   "cap_y": 1450
+  },
+  {
+   "id": "D06",
+   "at": 39.46,
+   "cap_y": 1450
+  },
+  {
+   "id": "P04",
+   "at": 40.31,
+   "cap_y": 1450
+  },
+  {
+   "id": "D07",
+   "at": 44.53,
+   "cap_y": 1450
+  },
+  {
+   "id": "P05",
+   "at": 46.06,
+   "cap_y": 1450
+  },
+  {
+   "id": "T02",
+   "at": 50.71,
+   "cap_y": 1450
+  },
+  {
+   "id": "D08",
+   "at": 55.11,
+   "cap_y": 1450
+  }
+ ],
+ "sfx": [
+  {
+   "name": "mouse_clicks",
+   "at": 0.83,
+   "gain": 0.55,
+   "dur": 0.1
+  },
+  {
+   "name": "install_whoosh",
+   "at": 0.88,
+   "gain": 0.45
+  },
+  {
+   "name": "ding",
+   "at": 1.42,
+   "gain": 0.5
+  },
+  {
+   "name": "box_pop",
+   "at": 1.63,
+   "gain": 0.7
+  },
+  {
+   "name": "servo",
+   "at": 1.75,
+   "gain": 0.45
+  },
+  {
+   "name": "robot_chime",
+   "at": 2.21,
+   "gain": 0.6
+  },
+  {
+   "name": "servo",
+   "at": 3.05,
+   "gain": 0.25
+  },
+  {
+   "name": "hud_pop",
+   "at": 7.71,
+   "gain": 0.4
+  },
+  {
+   "name": "turbo_typing",
+   "at": 7.35,
+   "gain": 0.55
+  },
+  {
+   "name": "deflate",
+   "at": 7.96,
+   "gain": 0.45
+  },
+  {
+   "name": "turbo_typing",
+   "at": 9.5,
+   "gain": 0.7,
+   "dur": 1.25
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 0,
+   "gain": 0.22,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 8,
+   "gain": 0.22,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 16,
+   "gain": 0.22,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 24,
+   "gain": 0.22,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 32,
+   "gain": 0.22,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 40,
+   "gain": 0.22,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 48,
+   "gain": 0.22,
+   "dur": 8,
+   "fade": 0.1
+  },
+  {
+   "name": "office_hum_8s",
+   "at": 56,
+   "gain": 0.22,
+   "dur": 2.3999999999999986,
+   "fade": 0.1
+  },
+  {
+   "name": "turbo_typing",
+   "at": 10.75,
+   "gain": 0.35
+  },
+  {
+   "name": "turbo_typing",
+   "at": 13.2,
+   "gain": 0.3
+  },
+  {
+   "name": "turbo_typing",
+   "at": 15.6,
+   "gain": 0.3
+  },
+  {
+   "name": "enter_key",
+   "at": 17.85,
+   "gain": 0.6
+  },
+  {
+   "name": "ding",
+   "at": 17.9,
+   "gain": 0.5
+  },
+  {
+   "name": "ding",
+   "at": 18.9,
+   "gain": 0.45
+  },
+  {
+   "name": "ding",
+   "at": 19.5,
+   "gain": 0.45
+  },
+  {
+   "name": "ding",
+   "at": 20.0,
+   "gain": 0.45
+  },
+  {
+   "name": "ding",
+   "at": 20.4,
+   "gain": 0.45
+  },
+  {
+   "name": "ding",
+   "at": 20.75,
+   "gain": 0.45
+  },
+  {
+   "name": "ding",
+   "at": 21.05,
+   "gain": 0.45
+  },
+  {
+   "name": "ding",
+   "at": 21.3,
+   "gain": 0.45
+  },
+  {
+   "name": "turbo_typing",
+   "at": 21.52,
+   "gain": 0.3
+  },
+  {
+   "name": "error_beeps",
+   "at": 30.45,
+   "gain": 0.35
+  },
+  {
+   "name": "error_buzz",
+   "at": 30.5,
+   "gain": 0.6
+  },
+  {
+   "name": "error_buzz",
+   "at": 30.75,
+   "gain": 0.6
+  },
+  {
+   "name": "hud_pop",
+   "at": 30.5,
+   "gain": 0.5
+  },
+  {
+   "name": "turbo_typing",
+   "at": 33.2,
+   "gain": 0.3
+  },
+  {
+   "name": "thud",
+   "at": 39.4,
+   "gain": 0.5
+  },
+  {
+   "name": "robot_chime",
+   "at": 40.9,
+   "gain": 0.45
+  },
+  {
+   "name": "deflate",
+   "at": 48.2,
+   "gain": 0.45
+  },
+  {
+   "name": "turbo_typing",
+   "at": 49.4,
+   "gain": 0.3
+  },
+  {
+   "name": "turbo_typing",
+   "at": 51.9,
+   "gain": 0.25
+  },
+  {
+   "name": "turbo_typing",
+   "at": 54.3,
+   "gain": 0.25
+  },
+  {
+   "name": "robot_chime",
+   "at": 57.85,
+   "gain": 0.5
+  }
+ ],
+ "silence": [
+  [
+   58.4,
+   58.75
+  ]
+ ]
+}

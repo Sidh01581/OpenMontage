@@ -1,0 +1,22 @@
+{
+  "duration_s": 10.75,
+  "vo": [
+    {"id": "R01", "at": 3.0, "cap_y": 1450},
+    {"id": "D01", "at": 6.4, "cap_y": 1450}
+  ],
+  "sfx": [
+    {"name": "office_hum_8s", "at": 0.0, "gain": 0.22, "dur": 8.0, "fade": 0.1},
+    {"name": "office_hum_8s", "at": 8.0, "gain": 0.22, "dur": 2.75, "fade": 0.05},
+    {"name": "mouse_clicks", "at": 0.83, "gain": 0.55, "dur": 0.1},
+    {"name": "install_whoosh", "at": 0.88, "gain": 0.45},
+    {"name": "ding", "at": 1.42, "gain": 0.5},
+    {"name": "box_pop", "at": 1.63, "gain": 0.7},
+    {"name": "servo", "at": 1.75, "gain": 0.45},
+    {"name": "robot_chime", "at": 2.21, "gain": 0.6},
+    {"name": "servo", "at": 3.05, "gain": 0.25},
+    {"name": "hud_pop", "at": 7.71, "gain": 0.4},
+    {"name": "turbo_typing", "at": 7.35, "gain": 0.55},
+    {"name": "deflate", "at": 7.96, "gain": 0.45},
+    {"name": "turbo_typing", "at": 9.5, "gain": 0.7, "dur": 1.25}
+  ]
+}

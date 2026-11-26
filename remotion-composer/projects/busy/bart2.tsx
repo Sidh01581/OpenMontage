@@ -43,12 +43,12 @@ export const DevSeated: React.FC<{
   lookX?: number; lookY?: number; serious?: boolean; sweat?: number; turn?: number; headTilt?: number; sip?: number; glow?: number;
   screen?: React.ReactNode; coffeeOnDesk?: boolean; crack?: number; deskless?: boolean;
   down?: number; // facedown only: 0 = sitting (type pose) .. 1 = head down on the desk beside the keyboard, arms limp
-  natural?: boolean; // opt-in (PASSWORD NIGHTMARE. on): flexible short neck bending toward the screen, relaxed shoulders, bent elbows
+  natural?: boolean; // opt-in (PASSWORD NIGHTMARE. on; phone pose from AUTOMATED.): flexible short neck bending toward the screen, relaxed shoulders, bent elbows
 }> = ({ x, y, s = 1, frame, pose, typeSpeed = 0, talk = 0, lookX = 16, lookY = 4, serious = true, sweat = 0, turn = 30, headTilt = 0, sip = 0, glow = 0, screen, coffeeOnDesk = true, crack = 0, deskless = false, down = 1, natural = false }) => {
   const fd = pose === "facedown" ? Math.max(0, Math.min(1, down)) : 0;
   const lean0 = pose === "upright" ? -4 : pose === "slump" || pose === "phone" ? -20 : 8;
-  const nat = natural && (pose === "type" || pose === "upright" || pose === "knuckles");
-  const lean = pose === "facedown" ? lerp(8, 40, fd) : nat ? (pose === "upright" ? 10 : 16) : lean0;
+  const nat = natural && (pose === "type" || pose === "upright" || pose === "knuckles" || pose === "phone");
+  const lean = pose === "facedown" ? lerp(8, 40, fd) : nat ? (pose === "upright" ? 10 : pose === "phone" ? -12 : 16) : lean0;
   const sink0 = pose === "slump" || pose === "phone" ? 26 : pose === "upright" ? -14 : 0;
   const sink = sink0 + 20 * fd;
   const tr = (p: Pt): Pt => { const q = rot(p, lean); return [q[0], q[1] + sink]; };
@@ -60,7 +60,7 @@ export const DevSeated: React.FC<{
   if (pose === "slump") { hF = lerpP([70, -110 + sink], [52, -250 + sink], sip); hB = [10, -70 + sink]; }
   if (pose === "phone") { hF = [96, -170 + sink]; hB = [70, -150 + sink]; }
   if (pose === "facedown") { hF = lerpP(hF, [196, 36], fd); hB = lerpP(hB, [156, 28], fd); }
-  if (nat && pose !== "knuckles") { const k = pose === "upright" ? 1.4 : 1; hF = [140, -48 + jit(0) * k]; hB = [116, -46 + jit(2.1) * k]; }
+  if (nat && pose !== "knuckles" && pose !== "phone") { const k = pose === "upright" ? 1.4 : 1; hF = [140, -48 + jit(0) * k]; hB = [116, -46 + jit(2.1) * k]; }
   const elF = ik(shF, hF, 82, 78, 1), elB = ik(shB, hB, 82, 78, 1);
   const headP = tr([8, -318]);
   // facedown: the head hinges at the neck and comes to rest face-down on the desk (crown toward the monitor)
@@ -68,7 +68,7 @@ export const DevSeated: React.FC<{
   const headRot = lerp(lean * 0.5 + headTilt, 95, fd);
   // natural: a short flexible neck rises out of the collar and bends forward toward the screen; the head hangs off its top
   const nBase = tr([8, -192]), nTop = tr([20, -252]), nCtl = tr([10, -232]);
-  const nTilt = lean * 0.4 + 6 + headTilt;
+  const nTilt = lean * 0.4 + 6 + headTilt + (pose === "phone" ? 14 : 0); // phone (AUTOMATED.): head bows toward the phone
   const bx = -40 * fd; // facedown: the chair rolls back a little so his head lands beside the keyboard, clear of the monitor
   return (
     <g transform={`translate(${x} ${y}) scale(${s})`}>
