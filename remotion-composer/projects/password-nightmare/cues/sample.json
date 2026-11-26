@@ -1,0 +1,29 @@
+{
+  "duration_s": 11.25,
+  "vo": [
+    {"id": "D01", "at": 2.2, "cap_y": 1450},
+    {"id": "S01", "at": 3.5, "cap_y": 1450},
+    {"id": "D02", "at": 5.65, "cap_y": 1450},
+    {"id": "S02", "at": 7.15, "cap_y": 1450},
+    {"id": "D03", "at": 8.6, "cap_y": 1450},
+    {"id": "S03", "at": 9.95, "cap_y": 1450}
+  ],
+  "sfx": [
+    {"name": "ping", "at": 0.15, "gain": 0.7},
+    {"name": "hud_pop", "at": 0.45, "gain": 0.45},
+    {"name": "mouse_clicks", "at": 1.33, "gain": 0.5, "dur": 0.1},
+    {"name": "office_hum_8s", "at": 1.75, "gain": 0.25, "dur": 8.0, "fade": 0.1},
+    {"name": "office_hum_8s", "at": 9.6, "gain": 0.25, "dur": 1.65, "fade": 0.05},
+    {"name": "knuckle_crack", "at": 1.8, "gain": 0.8},
+    {"name": "typing_burst", "at": 3.0, "gain": 0.6, "dur": 0.38},
+    {"name": "enter_key", "at": 3.4, "gain": 0.7},
+    {"name": "error_buzz", "at": 3.42, "gain": 0.55},
+    {"name": "hud_pop", "at": 3.55, "gain": 0.25},
+    {"name": "keyboard_calm_4s", "at": 5.6, "gain": 0.6, "dur": 1.4},
+    {"name": "enter_key", "at": 7.06, "gain": 0.7},
+    {"name": "error_buzz", "at": 7.08, "gain": 0.6},
+    {"name": "enter_key", "at": 9.0, "gain": 0.45},
+    {"name": "enter_key", "at": 9.69, "gain": 0.75},
+    {"name": "error_buzz", "at": 9.71, "gain": 0.65}
+  ]
+}

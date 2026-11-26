@@ -1,0 +1,17 @@
+{
+  "duration_s": 10.75,
+  "vo": [
+    {"id": "P01", "at": 1.9, "cap_y": 1450},
+    {"id": "T01", "at": 5.0, "cap_y": 1450},
+    {"id": "P02", "at": 6.4, "cap_y": 1450},
+    {"id": "T02", "at": 8.2, "cap_y": 1450}
+  ],
+  "sfx": [
+    {"name": "ping", "at": 0.15, "gain": 0.7},
+    {"name": "hud_pop", "at": 0.45, "gain": 0.5},
+    {"name": "fluorescent_9s", "at": 1.75, "gain": 0.3, "dur": 9.0, "fade": 0.1},
+    {"name": "clicker", "at": 6.62, "gain": 0.7},
+    {"name": "ping", "at": 8.5, "gain": 0.25},
+    {"name": "deflate", "at": 9.3, "gain": 0.4}
+  ]
+}

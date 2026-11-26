@@ -304,7 +304,7 @@ export const ScreenSpill: React.FC<{ id: string; color: string; strength: number
 export type Expr = "panic" | "focused" | "sad" | "neutral" | "smile"
   | "grin" | "blank" | "guilty" | "exhausted" | "anxious" | "relieved" | "overwhelmed" | "shock" | "determined";
 
-const Face: React.FC<{ expr: Expr; frame: number; lookX: number; lookY: number; blinkEvery?: number; eyesClosed?: boolean; talk?: number; glassesY?: number }> = ({ expr, frame, lookX, lookY, blinkEvery = 84, eyesClosed, talk, glassesY = 0 }) => {
+export const Face: React.FC<{ expr: Expr; frame: number; lookX: number; lookY: number; blinkEvery?: number; eyesClosed?: boolean; talk?: number; glassesY?: number }> = ({ expr, frame, lookX, lookY, blinkEvery = 84, eyesClosed, talk, glassesY = 0 }) => {
   const happyClosed = expr === "relieved";
   const blinking = happyClosed || eyesClosed || (frame + 37) % blinkEvery < 4;
   const pupil = expr === "panic" || expr === "overwhelmed" || expr === "shock" ? 5 : 10;
